@@ -1,3 +1,20 @@
-const h2 = document.createElement("h2");
-h2.textContent = "This content added by Javascript";
-document.querySelector("body").appendChild(h2);
+document.addEventListener("DOMContentLoaded", function() {
+    const image = document.getElementById("dog");
+    const showButton = document.getElementById("showImage");
+    let isImageHidden = false;
+
+    image.addEventListener("click", function() {
+        if (!isImageHidden) {
+            image.classList.add("hidden");
+            isImageHidden = true;
+        }
+    });
+
+
+    showButton.addEventListener("click", function() {
+        if (isImageHidden) {
+            image.classList.remove("hidden");
+            isImageHidden = false;
+        }
+    });
+});
